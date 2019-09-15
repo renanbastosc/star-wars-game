@@ -6,30 +6,55 @@ export default class Main extends Component {
     state = {
         planet: []
     };
+
+    film_state = {
+        films: []
+    }
     componentDidMount() {
         this.loadPlanetInfo();
     }
 
     loadPlanetInfo = async () => {
-        const response = await api.get("/planets/3/");
-        console.log(response.data);
-        this.setState({ planet: response.data});
+        const planet_id = Math.floor(Math.random() * 21);
+        const response = await api.get("/planets/" + planet_id);
+        /* const uri_films = response.data.films;
+
+        const films = [];
+
+        uri_films.map(async function (film) {
+            const res_film = await api.get(film);
+            films.push(res_film.data.title);
+        });
+        response.data.films_name = films;*/
+
+        response.data.films_length = response.data.films.length;
+
+        console.log(response.data); 
+
+        this.setState({ planet: response.data });
     }
 
     render() {
+        const { planet } = this.state;
         return (
             <div className="planet-info">
                 <div className="planet_name">
-                    {this.state.planet.name}
+                    {planet.name}
                 </div>
                 <div className="population">
-                    Population: {this.state.planet.population}
+                    Population: {planet.population}
                 </div>
                 <div className="climate">
-                    Climate: {this.state.planet.climate}
+                    Climate: {planet.climate}
                 </div>
                 <div className="terrain">
-                    Terrain: {this.state.planet.terrain}
+                    Terrain: {planet.terrain}
+                </div>
+                <div className="films_appear">
+                    Featured in {planet.films_length} films
+                </div>
+                <div className="next_planet">
+                    <a href="">Next</a>
                 </div>
             </div>
         )
