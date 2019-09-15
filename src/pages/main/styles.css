@@ -1,0 +1,52 @@
+.planet-info {
+    background: #e4dfde52;
+    border: 1px solid #22212052;
+    border-radius: 1px;
+    padding: 70px;
+    margin-bottom: 20px;
+}
+
+.planet-name {
+    font-size: 26px;
+    max-width: fit-content;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+.population {
+    max-width: fit-content;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+.climate {
+    max-width: fit-content;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+.terrain {
+    max-width: fit-content;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+.films {
+    max-width: fit-content;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+
+.next-planet {
+    max-width: fit-content;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+a {
+    padding: 0 20px;
+    height: 42px;
+    border-radius: 5px;
+    border: 2px solid #22212052;
+    background: 2px solid #22212052;
+    margin-top: 100px;
+    color: #22212052;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+}
